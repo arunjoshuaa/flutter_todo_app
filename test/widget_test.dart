@@ -3,8 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:provider/provider.dart';
 import 'package:to_do_application/providers/todo_provider.dart';
-import 'package:to_do_application/screens/todo_screen.dart';
-
+import 'package:to_do_application/screens/home_screen.dart';
 
 void main() {
   testWidgets('Displays added task in the list', (WidgetTester tester) async {

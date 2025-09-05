@@ -3,7 +3,6 @@ import 'package:provider/provider.dart';
 import 'package:to_do_application/widgets/custom_dialuge.dart';
 import '../providers/todo_provider.dart';
 
-
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
 
@@ -96,8 +95,9 @@ class HomeScreen extends StatelessWidget {
                               task.completed
                                   ? Icons.check_box
                                   : Icons.check_box_outline_blank,
-                              color:
-                                  task.completed ? Colors.green : Colors.grey,
+                              color: task.completed
+                                  ? Colors.green
+                                  : Colors.grey,
                             ),
                           ),
                           IconButton(

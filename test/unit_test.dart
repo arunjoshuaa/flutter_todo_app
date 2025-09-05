@@ -16,7 +16,10 @@ void main() {
     });
 
     test('Task should store correct title and description', () {
-      final todo = Todo(title: "Read Book", description: "Read Flutter in Action");
+      final todo = Todo(
+        title: "Read Book",
+        description: "Read Flutter in Action",
+      );
 
       expect(todo.title, "Read Book");
       expect(todo.description, "Read Flutter in Action");

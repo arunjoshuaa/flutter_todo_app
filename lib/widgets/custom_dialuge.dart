@@ -27,7 +27,9 @@ class _TaskDialogState extends State<TaskDialog> {
   void initState() {
     super.initState();
     _titleController = TextEditingController(text: widget.initialTitle ?? "");
-    _descController = TextEditingController(text: widget.initialDescription ?? "");
+    _descController = TextEditingController(
+      text: widget.initialDescription ?? "",
+    );
   }
 
   @override
@@ -43,7 +45,11 @@ class _TaskDialogState extends State<TaskDialog> {
       if (widget.taskIndex == -1) {
         todoProvider.addTask(_titleController.text, _descController.text);
       } else {
-        todoProvider.updateTask(widget.taskIndex, _titleController.text, _descController.text);
+        todoProvider.updateTask(
+          widget.taskIndex,
+          _titleController.text,
+          _descController.text,
+        );
       }
       Navigator.pop(context);
     }
@@ -89,7 +95,10 @@ class _TaskDialogState extends State<TaskDialog> {
         ),
       ),
       actions: [
-        TextButton(onPressed: () => Navigator.pop(context), child: const Text("Cancel")),
+        TextButton(
+          onPressed: () => Navigator.pop(context),
+          child: const Text("Cancel"),
+        ),
         ElevatedButton(onPressed: _saveTask, child: const Text("Save")),
       ],
     );
