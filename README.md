@@ -61,7 +61,7 @@ flutter test
 
 Clone the repo
 
-git clone https://github.com/YOUR_USERNAME/todo_app.git
+git clone https://github.com/arunjoshuaa/flutter_todo_app.git
 cd todo_app
 
 
