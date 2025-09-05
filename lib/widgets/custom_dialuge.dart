@@ -95,11 +95,12 @@ class _TaskDialogState extends State<TaskDialog> {
         ),
       ),
       actions: [
-        TextButton(
+        ElevatedButton(
           onPressed: () => Navigator.pop(context),
           child: const Text("Cancel"),
+          style: ElevatedButton.styleFrom(backgroundColor: Colors.red,foregroundColor: Colors.white)
         ),
-        ElevatedButton(onPressed: _saveTask, child: const Text("Save")),
+        ElevatedButton(onPressed: _saveTask, child: const Text("Save"),style: ElevatedButton.styleFrom(backgroundColor: Colors.green,foregroundColor: Colors.white)),
       ],
     );
   }

@@ -43,7 +43,8 @@ class HomeScreen extends StatelessWidget {
               ),
             )
           : Container(
-              margin: const EdgeInsets.all(10),
+              padding: EdgeInsets.all(10),
+              //  margin: const EdgeInsets.all(10),
               child: ListView.builder(
                 itemCount: todoList.length,
                 itemBuilder: (context, index) {
@@ -116,10 +117,15 @@ class HomeScreen extends StatelessWidget {
                 },
               ),
             ),
-      floatingActionButton: FloatingActionButton.extended(
-        onPressed: () => openTaskDialog(context),
-        icon: const Icon(Icons.add),
-        label: const Text("Add Task"),
+      floatingActionButton: Padding(
+        padding: const EdgeInsets.only(bottom: 50),
+        child: FloatingActionButton.extended(
+          backgroundColor: Colors.blue,
+          foregroundColor: Colors.white,
+          onPressed: () => openTaskDialog(context),
+          icon: const Icon(Icons.add),
+          label: const Text("Add Task"),
+        ),
       ),
     );
   }
