@@ -1,30 +1,36 @@
-// This is a basic Flutter widget test.
-//
-// To perform an interaction with a widget in your test, use the WidgetTester
-// utility in the flutter_test package. For example, you can send tap and scroll
-// gestures. You can also use WidgetTester to find child widgets in the widget
-// tree, read text, and verify that the values of widget properties are correct.
-
+// test/home_screen_test.dart
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:provider/provider.dart';
+import 'package:to_do_application/providers/todo_provider.dart';
+import 'package:to_do_application/screens/todo_screen.dart';
 
-import 'package:to_do_application/main.dart';
 
 void main() {
-  testWidgets('Counter increments smoke test', (WidgetTester tester) async {
-    // Build our app and trigger a frame.
-    await tester.pumpWidget(const MyApp());
+  testWidgets('Displays added task in the list', (WidgetTester tester) async {
+    // Arrange: Build widget with Provider
+    await tester.pumpWidget(
+      ChangeNotifierProvider(
+        create: (_) => TodoProvider(),
+        child: const MaterialApp(home: HomeScreen()),
+      ),
+    );
 
-    // Verify that our counter starts at 0.
-    expect(find.text('0'), findsOneWidget);
-    expect(find.text('1'), findsNothing);
+    // Initially should show "No tasks yet"
+    expect(find.text("No tasks yet. Tap + to add one!"), findsOneWidget);
 
-    // Tap the '+' icon and trigger a frame.
-    await tester.tap(find.byIcon(Icons.add));
+    // Act: Add a task directly through provider
+    final provider = Provider.of<TodoProvider>(
+      tester.element(find.byType(HomeScreen)),
+      listen: false,
+    );
+    provider.addTask("Test Task", "This is a test");
+
+    // Rebuild widget after provider update
     await tester.pump();
 
-    // Verify that our counter has incremented.
-    expect(find.text('0'), findsNothing);
-    expect(find.text('1'), findsOneWidget);
+    // Assert: Task should now appear
+    expect(find.text("Test Task"), findsOneWidget);
+    expect(find.text("This is a test"), findsOneWidget);
   });
 }
