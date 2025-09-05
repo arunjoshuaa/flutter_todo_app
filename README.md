@@ -21,9 +21,6 @@ Unit test for model logic
 
 Widget test for verifying UI updates
 
-📸 Screenshots
-
-(Add screenshots here if you can, e.g. screenshots/home.png)
 
 🛠️ Tech Stack
 
