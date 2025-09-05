@@ -1,18 +1,80 @@
-# To-do_App
-A simple to do app using provider
-# to_do_application
+📝 To-Do App
 
-A new Flutter project.
+A simple To-Do Application built with Flutter.
+This app demonstrates CRUD operations (Create, Read, Update, Delete) with state management using Provider, and includes unit & widget testing.
 
-## Getting Started
+🚀 Features
 
-This project is a starting point for a Flutter application.
+Add a new task (title & description)
 
-A few resources to get you started if this is your first Flutter project:
+Edit an existing task
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+Mark tasks as complete/incomplete (with strikethrough style for completed tasks)
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Delete tasks
+
+Clean and responsive UI built with Flutter
+
+State management with Provider
+
+Unit test for model logic
+
+Widget test for verifying UI updates
+
+📸 Screenshots
+
+(Add screenshots here if you can, e.g. screenshots/home.png)
+
+🛠️ Tech Stack
+
+Flutter
+ (UI framework)
+
+Provider
+ (state management)
+
+Dart
+ (programming language)
+
+📂 Project Structure
+lib/
+ ├── models/
+ │    └── todo.dart          # Task model
+ ├── providers/
+ │    └── todo_provider.dart # State management with ChangeNotifier
+ ├── widgets/
+ │    └── custom_dialog.dart # Task add/edit dialog
+ └── screens/
+      └── home_screen.dart   # Main home screen
+
+✅ Testing
+
+Unit Test → Tests the Todo model logic (todo_model_test.dart)
+
+Widget Test → Verifies task list UI updates correctly with Provider (home_screen_test.dart)
+
+Run tests with:
+
+flutter test
+
+📦 Getting Started
+
+Clone the repo
+
+git clone https://github.com/YOUR_USERNAME/todo_app.git
+cd todo_app
+
+
+Install dependencies
+
+flutter pub get
+
+
+Run the app
+
+flutter run
+
+
+Run tests
+
+flutter test
